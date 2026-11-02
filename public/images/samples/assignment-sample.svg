@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <filter id="paper-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#292524" flood-opacity="0.1"/>
+    </filter>
+    <pattern id="ruled-lines" width="100" height="28" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="28" x2="100" y2="28" stroke="#E8B4B8" stroke-width="0.8" opacity="0.65"/>
+    </pattern>
+  </defs>
+
+  <!-- Sheet Background -->
+  <rect x="20" y="20" width="560" height="760" rx="8" fill="#FFFDF9" filter="url(#paper-shadow)" stroke="#EADBC6" stroke-width="1.5"/>
+  <rect x="20" y="20" width="560" height="760" fill="url(#ruled-lines)"/>
+
+  <!-- Left Red Margin -->
+  <line x1="100" y1="20" x2="100" y2="780" stroke="#C97F89" stroke-width="1.5" opacity="0.8"/>
+  <line x1="105" y1="20" x2="105" y2="780" stroke="#C97F89" stroke-width="0.75" opacity="0.4"/>
+
+  <!-- Top Margin -->
+  <line x1="20" y1="104" x2="580" y2="104" stroke="#C97F89" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Header Details -->
+  <text x="120" y="65" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="bold" fill="#292524">ASSIGNMENT: PRINCIPLES OF MANAGEMENT</text>
+  <text x="120" y="88" font-family="'Poppins', sans-serif" font-size="11" fill="#78716C">MODULE 02 • CALICUT UNIVERSITY SYLLABUS</text>
+  <text x="490" y="65" font-family="'Poppins', sans-serif" font-size="11" font-weight="600" fill="#C97F89">PAGE: 01</text>
+
+  <!-- Title / Heading in handwritten vibe -->
+  <text x="120" y="145" font-family="'Caveat', cursive, sans-serif" font-size="24" font-weight="700" fill="#1C1917">I. Modern Organizational Structures</text>
+  <line x1="120" y1="152" x2="430" y2="152" stroke="#292524" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Body Content Hand-simulated curves / text -->
+  <g fill="#292524" font-family="'Caveat', cursive, sans-serif" font-size="19">
+    <text x="120" y="188">In organizational theory, structure defines how activities such as</text>
+    <text x="120" y="216">task allocation, coordination, and supervision are directed toward</text>
+    <text x="120" y="244">the achievement of organizational aims and student leadership.</text>
+
+    <!-- Subheading -->
+    <text x="120" y="286" font-weight="700" fill="#8A414B">1. Functional Organizational Model:</text>
+    <text x="140" y="314">• High degree of specialization and department clarity.</text>
+    <text x="140" y="342">• Direct supervisory chains ensuring uniform quality &amp; speed.</text>
+    <text x="140" y="370">• Minimal duplication of key resources and personnel.</text>
+
+    <!-- Subheading -->
+    <text x="120" y="412" font-weight="700" fill="#8A414B">2. Divisional &amp; Matrix Framework:</text>
+    <text x="120" y="440">Divisional frameworks group employees based on specific projects,</text>
+    <text x="120" y="468">geographical regions, or services rendered with care and discipline.</text>
+    <text x="140" y="496">a) Cross-functional communication channels.</text>
+    <text x="140" y="524">b) Enhanced accountability across semester deliverables.</text>
+    <text x="140" y="552">c) Flexibility to adapt to institutional demands.</text>
+
+    <text x="120" y="594" font-weight="700" fill="#8A414B">Key Takeaways:</text>
+    <text x="120" y="622">Every structured assignment requires accurate citations, clear</text>
+    <text x="120" y="650">visual hierarchies, and legible penmanship to secure top marks.</text>
+  </g>
+
+  <!-- Clean Bottom Margin & Stamp Sample Indicator -->
+  <line x1="20" y1="710" x2="580" y2="710" stroke="#E8B4B8" stroke-width="0.8"/>
+  <rect x="420" y="724" width="135" height="28" rx="14" fill="#F8E9EB" stroke="#C97F89" stroke-width="1"/>
+  <text x="432" y="742" font-family="'Poppins', sans-serif" font-size="10" font-weight="600" fill="#C97F89">SAMPLE PREVIEW</text>
+  <text x="120" y="742" font-family="'Poppins', sans-serif" font-size="10" fill="#78716C">Write With Care • Neat Assignment Writing ₹10/page</text>
+</svg>
+

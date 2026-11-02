@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <filter id="mal-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#292524" flood-opacity="0.1"/>
+    </filter>
+    <pattern id="mal-lines" width="100" height="32" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="32" x2="100" y2="32" stroke="#E8B4B8" stroke-width="0.75" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="560" height="760" rx="8" fill="#FFFDF9" filter="url(#mal-shadow)" stroke="#EADBC6" stroke-width="1.5"/>
+  <rect x="20" y="20" width="560" height="760" fill="url(#mal-lines)"/>
+
+  <!-- Margins -->
+  <line x1="90" y1="20" x2="90" y2="780" stroke="#C97F89" stroke-width="1.5" opacity="0.8"/>
+  <line x1="20" y1="100" x2="580" y2="100" stroke="#C97F89" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Malayalam Heading and Context -->
+  <text x="110" y="65" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="bold" fill="#292524">മലയാള സാഹിത്യം — അസൈൻമെന്റ്</text>
+  <text x="110" y="88" font-family="'Poppins', sans-serif" font-size="11" fill="#78716C">BA MALAYALAM / GENERAL KERALA STUDIES</text>
+  <text x="490" y="65" font-family="'Poppins', sans-serif" font-size="11" font-weight="600" fill="#C97F89">പേജ്: 01</text>
+
+  <!-- Title -->
+  <text x="110" y="145" font-family="'Manjari', 'Noto Sans Malayalam', sans-serif" font-size="20" font-weight="700" fill="#1C1917">കേരളീയ സംസ്കാരവും സാഹിത്യ പാരമ്പര്യവും</text>
+  <line x1="110" y1="156" x2="480" y2="156" stroke="#C97F89" stroke-width="1.5"/>
+
+  <!-- Malayalam text content -->
+  <g fill="#292524" font-family="'Manjari', 'Gayathri', sans-serif" font-size="16">
+    <text x="110" y="196">മലയാള ഭാഷയുടെയും സംസ്കാരത്തിന്റെയും വികാസത്തിൽ കാവ്യസാഹിത്യത്തിന്</text>
+    <text x="110" y="228">വലിയൊരു സ്ഥാനമുണ്ട്. തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛന്റെ കിളിപ്പാട്ട് പ്രസ്ഥാനം</text>
+    <text x="110" y="260">മലയാള ഭാഷയ്ക്ക് സുദൃഢമായൊരു രൂപവും കാവ്യ സൗന്ദര്യവും നൽകി.</text>
+
+    <!-- Subheading -->
+    <text x="110" y="306" font-weight="bold" fill="#8A414B">പ്രധാന സവിശേഷതകൾ:</text>
+    <text x="130" y="338">൧. ലളിതവും മനോഹരവുമായ അക്ഷരവിന്യാസം.</text>
+    <text x="130" y="370">൨. വ്യക്തമായ വാക്യഘടനയും ചിഹ്നനീതിയും.</text>
+    <text x="130" y="402">൩. വ്യാകരണ ശുദ്ധിയും വൃത്തിയുള്ള കൈയക്ഷരവും.</text>
+
+    <text x="110" y="448" font-weight="bold" fill="#8A414B">ആധുനിക മലയാള കവിത:</text>
+    <text x="110" y="480">കുമാരനാശാൻ, വള്ളത്തോൾ നാരായണമേനോൻ, ഉള്ളൂർ എസ്. പരമേശ്വരയ്യർ</text>
+    <text x="110" y="512">എന്നീ കവിത്രയങ്ങളുടെ രചനകൾ മലയാള കവിതയെ സാമൂഹിക ചിന്തകളിലേക്കും</text>
+    <text x="110" y="544">മാനവിക മൂല്യങ്ങളിലേക്കും വഴിതിരിച്ചുവിട്ടു.</text>
+
+    <text x="110" y="590" font-weight="bold" fill="#8A414B">ഉപസംഹാരം:</text>
+    <text x="110" y="622">വിദ്യാർത്ഥികളുടെ അസൈൻമെന്റുകൾക്കും റിക്കോർഡുകൾക്കും കൃത്യമായ</text>
+    <text x="110" y="654">മലയാള ലിപിഭംഗിയും വൃത്തിയും 'Write With Care' ഉറപ്പുനൽകുന്നു.</text>
+  </g>
+
+  <!-- Bottom Details -->
+  <line x1="20" y1="710" x2="580" y2="710" stroke="#E8B4B8" stroke-width="0.8"/>
+  <rect x="420" y="724" width="135" height="28" rx="14" fill="#F8E9EB" stroke="#C97F89" stroke-width="1"/>
+  <text x="432" y="742" font-family="'Poppins', sans-serif" font-size="10" font-weight="600" fill="#C97F89">SAMPLE PREVIEW</text>
+  <text x="110" y="742" font-family="'Poppins', sans-serif" font-size="10" fill="#78716C">Write With Care • Malayalam &amp; English Handwriting</text>
+</svg>
+

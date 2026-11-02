@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#FAF6F0"/>
+  <circle cx="32" cy="32" r="26" fill="#F5EBDD" stroke="#E8B4B8" stroke-width="2"/>
+  <!-- Pen Nib -->
+  <path d="M32 12L42 32L36 38L32 28L28 38L22 32L32 12Z" fill="#C97F89"/>
+  <path d="M32 28V46" stroke="#292524" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="32" cy="38" r="2" fill="#292524"/>
+  <!-- Little heart/ink flourish -->
+  <path d="M32 46C29 49 26 51 28 53C30 55 32 53 32 53C32 53 34 55 36 53C38 51 35 49 32 46Z" fill="#C97F89"/>
+</svg>
+
