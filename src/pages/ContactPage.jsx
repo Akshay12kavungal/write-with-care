@@ -13,6 +13,7 @@ import InstagramIcon from '../components/common/InstagramIcon';
 import Badge from '../components/common/Badge';
 import Button from '../components/common/Button';
 import SectionHeading from '../components/common/SectionHeading';
+import ScrollReveal from '../components/common/ScrollReveal';
 import EnquiryForm from '../components/forms/EnquiryForm';
 import { 
   WHATSAPP_DISPLAY, 
@@ -29,7 +30,7 @@ export default function ContactPage() {
       <section className="relative bg-paper-cream border-b border-blush-200 py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-stationery-pattern opacity-30 pointer-events-none"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <ScrollReveal animation="fade-up" className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <Badge variant="blush" size="md">
             Get in Touch
           </Badge>
@@ -42,14 +43,14 @@ export default function ContactPage() {
           <p className="text-xs sm:text-sm text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Reach out via WhatsApp for fast responses, or configure your order in the interactive builder below to launch a pre-formatted chat instantly.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Main Contact Grid: Details on Left, Enquiry Form on Right */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Business Details Cards */}
-          <div className="lg:col-span-5 space-y-6">
+          <ScrollReveal animation="fade-right" className="lg:col-span-5 space-y-6">
             <div className="rounded-3xl bg-paper-cream p-8 border border-blush-300 shadow-paper space-y-6">
               <div>
                 <span className="font-handwriting text-rose-600 text-xl font-bold">
@@ -170,12 +171,12 @@ export default function ContactPage() {
                 </Button>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Interactive WhatsApp Order Builder */}
-          <div className="lg:col-span-7">
+          <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-7">
             <EnquiryForm />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

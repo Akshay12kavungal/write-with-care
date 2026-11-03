@@ -12,6 +12,7 @@ import {
 import Button from '../components/common/Button';
 import Badge from '../components/common/Badge';
 import SectionHeading from '../components/common/SectionHeading';
+import ScrollReveal from '../components/common/ScrollReveal';
 import EnquiryForm from '../components/forms/EnquiryForm';
 import PriceCalculator from '../components/common/PriceCalculator';
 import { WHATSAPP_DISPLAY, createWhatsAppUrl } from '../utils/whatsapp';
@@ -23,7 +24,7 @@ export default function OrderPage() {
       <section className="relative bg-paper-cream border-b border-blush-200 py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-stationery-pattern opacity-30 pointer-events-none"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <ScrollReveal animation="fade-up" className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <Badge variant="rose" size="md">
             Fast Booking
           </Badge>
@@ -36,14 +37,14 @@ export default function OrderPage() {
           <p className="text-xs sm:text-sm text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Assignments at ₹10 per page • Simple Record Writing at ₹5 per page. Follow your reference notes and instructions verbatim.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Main Order Container */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Quick Pricing & Direct WhatsApp Fast Lane */}
-          <div className="lg:col-span-5 space-y-6">
+          <ScrollReveal animation="fade-right" className="lg:col-span-5 space-y-6">
             {/* WhatsApp Priority Card */}
             <div className="rounded-3xl bg-gradient-to-br from-emerald-500 via-emerald-600 to-green-700 text-white p-6 sm:p-8 shadow-xl space-y-4">
               <div className="flex items-center justify-between">
@@ -79,12 +80,12 @@ export default function OrderPage() {
 
             {/* Price Calculator for quick checking */}
             <PriceCalculator />
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Complete Enquiry Form */}
-          <div className="lg:col-span-7">
+          <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-7">
             <EnquiryForm />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

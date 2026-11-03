@@ -28,6 +28,8 @@ import SectionHeading from '../components/common/SectionHeading';
 import HandwritingShowcase from '../components/common/HandwritingShowcase';
 import PresentationComparison from '../components/common/PresentationComparison';
 import PriceCalculator from '../components/common/PriceCalculator';
+import ScrollReveal from '../components/common/ScrollReveal';
+import LazyImage from '../components/common/LazyImage';
 import GalleryCard from '../components/gallery/GalleryCard';
 import GalleryLightbox from '../components/gallery/GalleryLightbox';
 import { servicesData, coreValues } from '../data/servicesData';
@@ -70,7 +72,7 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Column: Hero Text */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <ScrollReveal animation="fade-up" duration={700} className="lg:col-span-7 space-y-6 text-center lg:text-left">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-full bg-blush-100/90 border border-blush-300 px-4 py-1.5 text-xs font-semibold text-rose-700 shadow-xs">
                 <Sparkles className="h-3.5 w-3.5 text-rose-500 animate-pulse" />
@@ -156,19 +158,20 @@ export default function HomePage() {
                   <span>Records: ₹5/pg</span>
                 </span>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Right Column: Hero Artwork / Notebook Illustration with Sticky Notes */}
-            <div className="lg:col-span-5 relative flex items-center justify-center">
+            <ScrollReveal animation="zoom-in" duration={800} delay={150} className="lg:col-span-5 relative flex items-center justify-center">
               <div className="relative w-full max-w-lg lg:max-w-none">
                 {/* Floating soft aura */}
                 <div className="absolute -inset-4 bg-gradient-to-tr from-blush-200 via-beige to-rose-200 rounded-3xl opacity-70 blur-xl transform -rotate-2"></div>
 
                 {/* Artwork Container */}
                 <div className="relative rounded-3xl bg-paper-pure p-3 sm:p-5 border-2 border-blush-300 shadow-stationery overflow-hidden">
-                  <img
+                  <LazyImage
                     src="/images/hero-art.svg"
                     alt="Write With Care stationery and handwriting composition"
+                    aspectRatio="aspect-[7/5]"
                     className="w-full h-auto object-contain rounded-2xl"
                   />
 
@@ -191,48 +194,56 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* 2. STATS & TRUST STRIP */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-16 relative z-10">
-        <div className="rounded-3xl bg-charcoal-900 text-white p-6 sm:p-8 shadow-2xl border-t-4 border-blush grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {trustStats.map((stat, idx) => (
-            <div key={idx} className="space-y-1">
-              <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold text-blush-200">
-                {stat.value}
+        <ScrollReveal animation="fade-up" duration={600} delay={100}>
+          <div className="rounded-3xl bg-charcoal-900 text-white p-6 sm:p-8 shadow-2xl border-t-4 border-blush grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {trustStats.map((stat, idx) => (
+              <div key={idx} className="space-y-1">
+                <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold text-blush-200">
+                  {stat.value}
+                </div>
+                <div className="text-xs sm:text-sm text-charcoal-300 font-medium">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-charcoal-300 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* 3. INTERACTIVE HANDWRITING STYLE SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <SectionHeading
-          eyebrow="Explore Our Handwriting"
-          title="Live Penmanship &amp; Format Preview"
-          subtitle="Test out different handwriting styles, margin rules, and paper layouts before placing your order."
-        />
+        <ScrollReveal animation="fade-up">
+          <SectionHeading
+            eyebrow="Explore Our Handwriting"
+            title="Live Penmanship &amp; Format Preview"
+            subtitle="Test out different handwriting styles, margin rules, and paper layouts before placing your order."
+          />
+        </ScrollReveal>
 
-        <HandwritingShowcase onZoomItem={(item) => setSelectedGalleryItem(item)} />
+        <ScrollReveal animation="zoom-in" delay={150}>
+          <HandwritingShowcase onZoomItem={(item) => setSelectedGalleryItem(item)} />
+        </ScrollReveal>
       </section>
 
       {/* 4. THE PRESENTATION ADVANTAGE: BEFORE VS AFTER COMPARISON */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <PresentationComparison />
+        <ScrollReveal animation="fade-up" delay={100}>
+          <PresentationComparison />
+        </ScrollReveal>
       </section>
 
       {/* 5. ABOUT PREVIEW SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left: About Text */}
-          <div className="lg:col-span-7 space-y-5">
+          <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-7 space-y-5">
             <SectionHeading
               eyebrow="Dedicated Handwriting Partner"
               title="About Write With Care"
@@ -280,10 +291,10 @@ export default function HomePage() {
                 Learn More About Us
               </Button>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right: Stationery Card Visual */}
-          <div className="lg:col-span-5">
+          <ScrollReveal animation="fade-left" delay={200} className="lg:col-span-5">
             <div className="relative rounded-3xl bg-paper-pure p-6 sm:p-8 border-2 border-blush-300 shadow-stationery space-y-4">
               <div className="washi-tape-rose"></div>
 
@@ -329,196 +340,220 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 6. SERVICES SECTION */}
       <section className="bg-paper-cream py-16 sm:py-24 border-y border-blush-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <SectionHeading
-            eyebrow="Academic Services"
-            title="What We Write For You"
-            subtitle="We follow the reference materials and instructions provided by students to ensure flawless college submissions."
-          />
+          <ScrollReveal animation="fade-up">
+            <SectionHeading
+              eyebrow="Academic Services"
+              title="What We Write For You"
+              subtitle="We follow the reference materials and instructions provided by students to ensure flawless college submissions."
+            />
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {servicesData.map((service) => {
+            {servicesData.map((service, index) => {
               const Icon = getServiceIcon(service.iconName);
               return (
-                <div
+                <ScrollReveal
                   key={service.id}
-                  className="flex flex-col justify-between rounded-3xl bg-paper-pure p-6 border-2 border-blush-300 shadow-soft hover:shadow-stationery-hover transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+                  animation="fade-up"
+                  delay={index * 120}
+                  className="flex"
                 >
-                  <div className="space-y-4">
-                    {/* Icon and price badge */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blush-100 text-rose-600 group-hover:bg-rose-500 group-hover:text-white transition-colors">
-                        <Icon className="h-6 w-6" />
+                  <div
+                    className="w-full flex flex-col justify-between rounded-3xl bg-paper-pure p-6 border-2 border-blush-300 shadow-soft hover:shadow-stationery-hover transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
+                  >
+                    <div className="space-y-4">
+                      {/* Icon and price badge */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blush-100 text-rose-600 group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <span className="font-serif font-bold text-xs bg-beige-light px-2.5 py-1 rounded-full border border-beige-dark text-charcoal-800">
+                          {service.price}
+                        </span>
                       </div>
-                      <span className="font-serif font-bold text-xs bg-beige-light px-2.5 py-1 rounded-full border border-beige-dark text-charcoal-800">
-                        {service.price}
-                      </span>
+
+                      <div>
+                        <h3 className="font-serif text-lg font-bold text-charcoal-800 group-hover:text-rose-600 transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="mt-1 text-xs text-rose-600 font-medium">
+                          {service.tagline}
+                        </p>
+                        <p className="mt-2 text-xs text-charcoal-600 leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      {/* Features preview */}
+                      <ul className="space-y-1.5 pt-2 border-t border-blush-200/60 text-[11px] text-charcoal-600">
+                        {service.features.slice(0, 3).map((f, i) => (
+                          <li key={i} className="flex items-center gap-1.5">
+                            <CheckCircle2 className="h-3 w-3 text-rose-500 flex-shrink-0" />
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <div>
-                      <h3 className="font-serif text-lg font-bold text-charcoal-800 group-hover:text-rose-600 transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="mt-1 text-xs text-rose-600 font-medium">
-                        {service.tagline}
-                      </p>
-                      <p className="mt-2 text-xs text-charcoal-600 leading-relaxed">
-                        {service.description}
-                      </p>
+                    <div className="mt-6 pt-4 border-t border-blush-200/60 flex items-center justify-between gap-2">
+                      <Button
+                        href={createWhatsAppUrl(service.whatsappMessage)}
+                        isWhatsApp
+                        size="sm"
+                        className="w-full text-xs"
+                      >
+                        Order on WhatsApp
+                      </Button>
                     </div>
-
-                    {/* Features preview */}
-                    <ul className="space-y-1.5 pt-2 border-t border-blush-200/60 text-[11px] text-charcoal-600">
-                      {service.features.slice(0, 3).map((f, i) => (
-                        <li key={i} className="flex items-center gap-1.5">
-                          <CheckCircle2 className="h-3 w-3 text-rose-500 flex-shrink-0" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-blush-200/60 flex items-center justify-between gap-2">
-                    <Button
-                      href={createWhatsAppUrl(service.whatsappMessage)}
-                      isWhatsApp
-                      size="sm"
-                      className="w-full text-xs"
-                    >
-                      Order on WhatsApp
-                    </Button>
-                  </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
 
-          <div className="text-center pt-4">
+          <ScrollReveal animation="fade-up" delay={200} className="text-center pt-4">
             <Button to="/services" variant="secondary" size="md" icon={ArrowRight} iconPosition="right">
               View All Service Details &amp; Options
             </Button>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 7. PRICING & INTERACTIVE CALCULATOR PREVIEW */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <SectionHeading
-          eyebrow="Transparent Student Pricing"
-          title="Simple, Affordable Rates"
-          subtitle="No hidden costs. College-friendly rates verified for students across Kerala."
-        />
+        <ScrollReveal animation="fade-up">
+          <SectionHeading
+            eyebrow="Transparent Student Pricing"
+            title="Simple, Affordable Rates"
+            subtitle="No hidden costs. College-friendly rates verified for students across Kerala."
+          />
+        </ScrollReveal>
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {officialPricing.map((item, idx) => (
-            <div
+            <ScrollReveal
               key={idx}
-              className="relative rounded-3xl bg-paper-pure p-8 border-2 border-blush-300 shadow-stationery flex flex-col justify-between hover:border-rose-400 transition-colors"
+              animation="fade-up"
+              delay={idx * 150}
+              className="flex"
             >
-              <div className="washi-tape-rose"></div>
+              <div
+                className="w-full relative rounded-3xl bg-paper-pure p-8 border-2 border-blush-300 shadow-stationery flex flex-col justify-between hover:border-rose-400 transition-colors"
+              >
+                <div className="washi-tape-rose"></div>
 
-              <div className="space-y-4 pt-2">
-                <div className="flex items-center justify-between">
-                  <Badge variant="rose" size="md">
-                    {item.highlight}
-                  </Badge>
-                  <span className="text-xs text-charcoal-muted font-medium">Standard Academic Sheet</span>
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-center justify-between">
+                    <Badge variant="rose" size="md">
+                      {item.highlight}
+                    </Badge>
+                    <span className="text-xs text-charcoal-muted font-medium">Standard Academic Sheet</span>
+                  </div>
+
+                  <h3 className="font-serif text-2xl font-bold text-charcoal-800">
+                    {item.service}
+                  </h3>
+                  
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-serif text-4xl sm:text-5xl font-extrabold text-rose-600">
+                      {item.price}
+                    </span>
+                    <span className="text-sm font-semibold text-charcoal-600">
+                      {item.unit}
+                    </span>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <ul className="space-y-2 pt-4 border-t border-blush-200 text-xs sm:text-sm text-charcoal-700">
+                    {item.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="flex items-center gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-rose-500 flex-shrink-0" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-charcoal-800">
-                  {item.service}
-                </h3>
-                
-                <div className="flex items-baseline gap-2">
-                  <span className="font-serif text-4xl sm:text-5xl font-extrabold text-rose-600">
-                    {item.price}
-                  </span>
-                  <span className="text-sm font-semibold text-charcoal-600">
-                    {item.unit}
-                  </span>
+                <div className="mt-8 pt-6 border-t border-blush-200">
+                  <Button
+                    to="/order"
+                    variant="primary"
+                    size="md"
+                    className="w-full"
+                  >
+                    Book This Service
+                  </Button>
                 </div>
-
-                <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-                  {item.description}
-                </p>
-
-                <ul className="space-y-2 pt-4 border-t border-blush-200 text-xs sm:text-sm text-charcoal-700">
-                  {item.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-rose-500 flex-shrink-0" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-
-              <div className="mt-8 pt-6 border-t border-blush-200">
-                <Button
-                  to="/order"
-                  variant="primary"
-                  size="md"
-                  className="w-full"
-                >
-                  Book This Service
-                </Button>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Interactive Estimator Embedded */}
-        <div className="max-w-3xl mx-auto pt-4">
+        <ScrollReveal animation="fade-up" delay={200} className="max-w-3xl mx-auto pt-4">
           <PriceCalculator />
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* 8. HOW TO ORDER SECTION */}
       <section className="bg-paper-cream py-16 sm:py-20 border-y border-blush-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <SectionHeading
-            eyebrow="Simple 5-Step Process"
-            title="How to Order in Minutes"
-            subtitle="Follow these simple steps to receive neat, ready-to-submit handwritten work."
-          />
+          <ScrollReveal animation="fade-up">
+            <SectionHeading
+              eyebrow="Simple 5-Step Process"
+              title="How to Order in Minutes"
+              subtitle="Follow these simple steps to receive neat, ready-to-submit handwritten work."
+            />
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {orderSteps.map((step) => (
-              <div
+            {orderSteps.map((step, sIdx) => (
+              <ScrollReveal
                 key={step.step}
-                className="relative rounded-2xl bg-paper-pure p-5 border border-blush-300 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
+                animation="fade-up"
+                delay={sIdx * 100}
+                className="flex"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white font-serif font-bold text-sm shadow-xs">
-                      {step.step}
-                    </span>
-                    <span className="text-[10px] font-bold text-rose-600 uppercase tracking-wider">
-                      Step 0{step.step}
-                    </span>
+                <div
+                  className="w-full relative rounded-2xl bg-paper-pure p-5 border border-blush-300 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-500 text-white font-serif font-bold text-sm shadow-xs">
+                        {step.step}
+                      </span>
+                      <span className="text-[10px] font-bold text-rose-600 uppercase tracking-wider">
+                        Step 0{step.step}
+                      </span>
+                    </div>
+                    <h4 className="font-serif font-bold text-sm sm:text-base text-charcoal-800 mb-1.5">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs text-charcoal-600 leading-relaxed">
+                      {step.shortDesc}
+                    </p>
                   </div>
-                  <h4 className="font-serif font-bold text-sm sm:text-base text-charcoal-800 mb-1.5">
-                    {step.title}
-                  </h4>
-                  <p className="text-xs text-charcoal-600 leading-relaxed">
-                    {step.shortDesc}
-                  </p>
-                </div>
 
-                <div className="mt-4 pt-3 border-t border-beige-dark/60 text-[10px] text-charcoal-muted italic">
-                  💡 {step.tip}
+                  <div className="mt-4 pt-3 border-t border-beige-dark/60 text-[10px] text-charcoal-muted italic">
+                    💡 {step.tip}
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="text-center pt-4">
+          <ScrollReveal animation="fade-up" delay={200} className="text-center pt-4">
             <Button
               href={createWhatsAppUrl('Hello Write With Care! I would like to place an order.')}
               isWhatsApp
@@ -526,82 +561,100 @@ export default function HomePage() {
             >
               Order Through WhatsApp (88917 46484)
             </Button>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 9. GALLERY PREVIEW SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <SectionHeading
-            eyebrow="Authentic Formats &amp; Samples"
-            title="Handwriting Gallery Preview"
-            subtitle="Explore our sample presentation formats for assignments, records, Malayalam, and English penmanship."
-            center={false}
-          />
+        <ScrollReveal animation="fade-up">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <SectionHeading
+              eyebrow="Authentic Formats &amp; Samples"
+              title="Handwriting Gallery Preview"
+              subtitle="Explore our sample presentation formats for assignments, records, Malayalam, and English penmanship."
+              center={false}
+            />
 
-          <Button to="/gallery" variant="outline" size="md" icon={ArrowRight} iconPosition="right">
-            View All Samples
-          </Button>
-        </div>
+            <Button to="/gallery" variant="outline" size="md" icon={ArrowRight} iconPosition="right">
+              View All Samples
+            </Button>
+          </div>
+        </ScrollReveal>
 
         {/* Gallery Cards Grid (First 3 samples preview) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {galleryItems.slice(0, 3).map((item) => (
-            <GalleryCard
+          {galleryItems.slice(0, 3).map((item, idx) => (
+            <ScrollReveal
               key={item.id}
-              item={item}
-              onZoom={(selected) => setSelectedGalleryItem(selected)}
-            />
+              animation="fade-up"
+              delay={idx * 150}
+              className="flex"
+            >
+              <GalleryCard
+                item={item}
+                onZoom={(selected) => setSelectedGalleryItem(selected)}
+              />
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Sample Disclaimer Banner */}
-        <div className="rounded-2xl bg-blush-50 p-4 border border-blush-200 text-center text-xs text-charcoal-muted">
-          <strong className="text-charcoal-800">Authentic Presentation Preview:</strong> All samples illustrate real layout structures, margin disciplines, and handwriting styles provided by Write With Care. Student submissions remain 100% confidential.
-        </div>
+        <ScrollReveal animation="fade-up" delay={200}>
+          <div className="rounded-2xl bg-blush-50 p-4 border border-blush-200 text-center text-xs text-charcoal-muted">
+            <strong className="text-charcoal-800">Authentic Presentation Preview:</strong> All samples illustrate real layout structures, margin disciplines, and handwriting styles provided by Write With Care. Student submissions remain 100% confidential.
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* 10. CUSTOMER REVIEWS SECTION */}
       <section className="bg-paper-cream py-16 sm:py-20 border-y border-blush-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <SectionHeading
-            eyebrow="Student Testimonials"
-            title="Loved by College Students Across Kerala"
-            subtitle="Real feedback from students studying in Calicut University, government, and private colleges in Malappuram."
-          />
+          <ScrollReveal animation="fade-up">
+            <SectionHeading
+              eyebrow="Student Testimonials"
+              title="Loved by College Students Across Kerala"
+              subtitle="Real feedback from students studying in Calicut University, government, and private colleges in Malappuram."
+            />
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {studentReviews.map((rev) => (
-              <div
+            {studentReviews.map((rev, rIdx) => (
+              <ScrollReveal
                 key={rev.id}
-                className="flex flex-col justify-between rounded-3xl bg-paper-pure p-6 border border-blush-300 shadow-soft hover:shadow-stationery transition-all"
+                animation="fade-up"
+                delay={rIdx * 120}
+                className="flex"
               >
-                <div>
-                  {/* Star Rating */}
-                  <div className="flex items-center gap-1 text-amber-500 mb-3">
-                    {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
+                <div
+                  className="w-full flex flex-col justify-between rounded-3xl bg-paper-pure p-6 border border-blush-300 shadow-soft hover:shadow-stationery transition-all"
+                >
+                  <div>
+                    {/* Star Rating */}
+                    <div className="flex items-center gap-1 text-amber-500 mb-3">
+                      {[...Array(rev.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed italic">
+                      "{rev.comment}"
+                    </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed italic">
-                    "{rev.comment}"
-                  </p>
+                  <div className="mt-6 pt-4 border-t border-blush-200">
+                    <h4 className="font-serif font-bold text-sm text-charcoal-900">
+                      {rev.name}
+                    </h4>
+                    <p className="text-[11px] text-rose-600 font-medium">
+                      {rev.course}
+                    </p>
+                    <p className="text-[10px] text-charcoal-muted">
+                      {rev.college}
+                    </p>
+                  </div>
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-blush-200">
-                  <h4 className="font-serif font-bold text-sm text-charcoal-900">
-                    {rev.name}
-                  </h4>
-                  <p className="text-[11px] text-rose-600 font-medium">
-                    {rev.course}
-                  </p>
-                  <p className="text-[10px] text-charcoal-muted">
-                    {rev.college}
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -609,52 +662,54 @@ export default function HomePage() {
 
       {/* 11. CONTACT DETAILS & CTA BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-br from-charcoal via-charcoal-800 to-charcoal text-paper-cream p-8 sm:p-12 overflow-hidden shadow-2xl border-t-4 border-blush">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <Badge variant="rose" size="md">
-                Fast Response Guaranteed
-              </Badge>
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Have an Assignment Deadline Approaching?
-              </h2>
-              <p className="text-xs sm:text-sm text-charcoal-200 leading-relaxed max-w-2xl">
-                Don’t worry about burning the midnight oil or ruining your handwriting. Send us your reference notes on WhatsApp today and get your handwritten work delivered neatly on time.
-              </p>
+        <ScrollReveal animation="zoom-in" duration={700}>
+          <div className="relative rounded-3xl bg-gradient-to-br from-charcoal via-charcoal-800 to-charcoal text-paper-cream p-8 sm:p-12 overflow-hidden shadow-2xl border-t-4 border-blush">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8 space-y-4">
+                <Badge variant="rose" size="md">
+                  Fast Response Guaranteed
+                </Badge>
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                  Have an Assignment Deadline Approaching?
+                </h2>
+                <p className="text-xs sm:text-sm text-charcoal-200 leading-relaxed max-w-2xl">
+                  Don’t worry about burning the midnight oil or ruining your handwriting. Send us your reference notes on WhatsApp today and get your handwritten work delivered neatly on time.
+                </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2 text-xs text-blush-200">
-                <span className="flex items-center gap-1.5">
-                  <Phone className="h-4 w-4 text-rose-400" />
-                  <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
-                </span>
-                <span>&bull;</span>
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="h-4 w-4 text-rose-400" />
-                  <span>{BUSINESS_LOCATION}</span>
-                </span>
+                <div className="flex flex-wrap items-center gap-4 pt-2 text-xs text-blush-200">
+                  <span className="flex items-center gap-1.5">
+                    <Phone className="h-4 w-4 text-rose-400" />
+                    <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
+                  </span>
+                  <span>&bull;</span>
+                  <span className="flex items-center gap-1.5">
+                    <MapPin className="h-4 w-4 text-rose-400" />
+                    <span>{BUSINESS_LOCATION}</span>
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+                <Button
+                  href={createWhatsAppUrl('Hello Write With Care! I need to discuss an urgent assignment.')}
+                  isWhatsApp
+                  size="lg"
+                  className="w-full text-center"
+                >
+                  Chat on WhatsApp Now
+                </Button>
+                <Button
+                  to="/order"
+                  variant="soft"
+                  size="lg"
+                  className="w-full text-center"
+                >
+                  WhatsApp Order Builder
+                </Button>
               </div>
             </div>
-
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              <Button
-                href={createWhatsAppUrl('Hello Write With Care! I need to discuss an urgent assignment.')}
-                isWhatsApp
-                size="lg"
-                className="w-full text-center"
-              >
-                Chat on WhatsApp Now
-              </Button>
-              <Button
-                to="/order"
-                variant="soft"
-                size="lg"
-                className="w-full text-center"
-              >
-                WhatsApp Order Builder
-              </Button>
-            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Lightbox Modal */}

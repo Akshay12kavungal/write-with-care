@@ -1,6 +1,7 @@
 import React from 'react';
 import { ZoomIn, MessageCircle, ExternalLink } from 'lucide-react';
 import Badge from '../common/Badge';
+import LazyImage from '../common/LazyImage';
 import { createWhatsAppUrl } from '../../utils/whatsapp';
 
 export default function GalleryCard({ item, onZoom }) {
@@ -15,11 +16,11 @@ export default function GalleryCard({ item, onZoom }) {
 
       {/* Image Preview Container */}
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-paper-cream border-b border-blush-200">
-        <img
+        <LazyImage
           src={item.imageUrl}
           alt={item.title}
-          loading="lazy"
-          className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+          aspectRatio="aspect-[3/4]"
+          className="p-3 transition-transform duration-500 group-hover:scale-105"
         />
 
         {/* Floating Category Badge */}

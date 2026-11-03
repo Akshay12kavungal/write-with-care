@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Badge from './Badge';
 import Button from './Button';
+import LazyImage from './LazyImage';
 import { galleryItems } from '../../data/galleryData';
 import { createWhatsAppUrl } from '../../utils/whatsapp';
 
@@ -88,10 +89,11 @@ export default function HandwritingShowcase({ onZoomItem }) {
             <div className="washi-tape-corner"></div>
 
             <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-paper-cream">
-              <img
+              <LazyImage
                 src={activeItem.imageUrl}
                 alt={activeItem.title}
-                className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                aspectRatio="aspect-[3/4]"
+                className="p-2 transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Hover overlay */}

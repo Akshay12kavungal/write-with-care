@@ -11,6 +11,7 @@ import {
 import Button from '../components/common/Button';
 import Badge from '../components/common/Badge';
 import SectionHeading from '../components/common/SectionHeading';
+import ScrollReveal from '../components/common/ScrollReveal';
 import GalleryCard from '../components/gallery/GalleryCard';
 import GalleryLightbox from '../components/gallery/GalleryLightbox';
 import { galleryCategories, galleryItems } from '../data/galleryData';
@@ -30,7 +31,7 @@ export default function GalleryPage() {
       <section className="relative bg-paper-cream border-b border-blush-200 py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-stationery-pattern opacity-30 pointer-events-none"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <ScrollReveal animation="fade-up" className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <Badge variant="blush" size="md">
             Visual Portfolio
           </Badge>
@@ -43,13 +44,13 @@ export default function GalleryPage() {
           <p className="text-xs sm:text-sm text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Click on any sample to zoom in, inspect penmanship details, and request a similar format for your college submission.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Gallery Filter & Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <ScrollReveal animation="fade-up" delay={100} className="flex flex-wrap items-center justify-center gap-2">
           {galleryCategories.map((cat) => (
             <button
               key={cat.id}
@@ -63,40 +64,48 @@ export default function GalleryPage() {
               {cat.name}
             </button>
           ))}
-        </div>
+        </ScrollReveal>
 
         {/* Gallery Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredItems.map((item) => (
-            <GalleryCard
+          {filteredItems.map((item, idx) => (
+            <ScrollReveal
               key={item.id}
-              item={item}
-              onZoom={(target) => setSelectedItem(target)}
-            />
+              animation="fade-up"
+              delay={(idx % 6) * 100}
+              className="flex"
+            >
+              <GalleryCard
+                item={item}
+                onZoom={(target) => setSelectedItem(target)}
+              />
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Sample Disclosure Requirement */}
-        <div className="rounded-3xl bg-blush-50 p-6 border border-blush-200 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blush-200 text-rose-700 flex-shrink-0">
-            <Info className="h-5 w-5" />
+        <ScrollReveal animation="fade-up" delay={200}>
+          <div className="rounded-3xl bg-blush-50 p-6 border border-blush-200 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blush-200 text-rose-700 flex-shrink-0">
+              <Info className="h-5 w-5" />
+            </div>
+            <div className="flex-1 text-xs text-charcoal-600 space-y-1">
+              <h4 className="font-serif font-bold text-sm text-charcoal-800">
+                Authentic Presentation Previews &amp; Student Privacy
+              </h4>
+              <p>
+                In strict adherence to student privacy and academic integrity, our gallery features authentic format templates and representative penmanship samples. We never publish confidential student submissions without consent.
+              </p>
+            </div>
+            <Button
+              href={createWhatsAppUrl('Hi Write With Care! Can you share more sample pictures of your handwriting on WhatsApp?')}
+              isWhatsApp
+              size="sm"
+            >
+              Request More Samples
+            </Button>
           </div>
-          <div className="flex-1 text-xs text-charcoal-600 space-y-1">
-            <h4 className="font-serif font-bold text-sm text-charcoal-800">
-              Authentic Presentation Previews &amp; Student Privacy
-            </h4>
-            <p>
-              In strict adherence to student privacy and academic integrity, our gallery features authentic format templates and representative penmanship samples. We never publish confidential student submissions without consent.
-            </p>
-          </div>
-          <Button
-            href={createWhatsAppUrl('Hi Write With Care! Can you share more sample pictures of your handwriting on WhatsApp?')}
-            isWhatsApp
-            size="sm"
-          >
-            Request More Samples
-          </Button>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Lightbox Modal */}
